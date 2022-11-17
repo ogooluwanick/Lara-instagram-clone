@@ -21,4 +21,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [ProfilesController::class, 'index'])->name('home');
+Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profile.show');

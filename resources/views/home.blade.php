@@ -7,7 +7,7 @@
                         <img class="rounded-circle "  :width="[200]" :height="[200]" src="https://i.pinimg.com/564x/b0/16/0b/b0160be02faa7261a6ce5b124d381aa1.jpg" alt="user logo">
                 </div>
                 <div class="col-9">
-                        <div class=""><h1>extremenick_</h1></div>
+                        <div class=""><h1>{{$user["username"]}}</h1></div>
                         <div class="d-flex ">
                                 <div class="mr-4 "><strong class="font-weight-bold">0 </strong>posts</div>
                                 <div class="mr-4"><strong class="font-weight-bold">355 </strong>followers</div>
