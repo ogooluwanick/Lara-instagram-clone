@@ -14,10 +14,9 @@
                                 <div class="mr-4"><strong class="font-weight-bold">386 </strong>following</div>
                         </div>
                         <div class="">
-                                <strong class="font-weight-bold pt-4">Ogooluwa Olutimilehin</strong>
-                                <div class="">Web/Software Developer with High Honors in Information Technology. Passionate about solving problems with the use of software and gaining more experience building easy-to-use, responsive, accessible, and user-friendly websites and web applications. Highly focused on bringing value to any team I am a part of and I also believe in the team building. I'm always ready to learn from team-mates as well as assist in team activities.
-                                        Skills: JavaScript, ReactJS, React Native, SQL, HTML, CSS, SASS, jQuery, Bootstrap, Redux, Laravel, Typescript,Python</div>
-                                <a href="https://ogooluwanick-portfolio.netlify.app/">https://ogooluwanick-portfolio.netlify.app/</a>
+                                <strong class="font-weight-bold pt-4">{{$user->profile->title}}</strong>
+                                <div class="">{{$user->profile->desc}}</div>
+                                <a href="{{$user->profile->url}}">{{$user->profile->url}} </a>
                         </div>
                 </div>
         </div>
