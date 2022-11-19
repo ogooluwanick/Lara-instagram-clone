@@ -28,17 +28,18 @@ button {
 }
 
 /* A elements that don't have a class get default styles */
-// a,  a:hover, a:active{
-//         all: unset;
-//         color: #01376b;
-//         fill:  #01376b;
-//         cursor: pointer;
+a{
+        font-size: inherit;
+        all: unset;
+        color: black;
+        fill:  black;
+        cursor: pointer;
 
-//         &:hover{
-//                 color: lighten(#01376b,60%) ;
-//                 fill: lighten(#01376b,60%) ; ;
-//         }
-// }
+        &:hover{
+                color: lighten(black,60%) ;
+                fill: lighten(black,60%) ; ;
+        }
+}
 
 .profile_topRow{
        @media screen and (max-width: 1000px) {
@@ -61,8 +62,31 @@ button {
 
         a{
                 font-size: 1.25rem;
-                gap:3px
+                gap:3px;
+                color: #01376b;
+                fill:  #01376b;
+                text-decoration: none;
+
+                &:hover{
+                        color: lighten(#01376b,60%) ;
+                        fill: lighten(#01376b,60%) ; 
+                }
         }
+}
+
+.profile_URL{
+        
+                font-size: 1.25rem;
+                gap:3px;
+                color: #01376b;
+                fill:  #01376b;
+
+                &:hover{
+                        font-size: 1.25rem;
+                        color: lighten(#01376b,60%) ;
+                        fill: lighten(#01376b,60%) ; 
+                }
+        
 }
 
 .post-btn{
@@ -73,4 +97,10 @@ button {
                 margin: auto;
         }
         
+}
+
+
+.post_Img{
+        width: 20rem;
+        height: 20rem;
 }
