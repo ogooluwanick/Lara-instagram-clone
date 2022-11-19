@@ -11,6 +11,7 @@ class PostController extends Controller
     public function create(){
         return view("posts.create");
     }
+
     public function store(Request $request){
         // dd($request->all());
 
@@ -18,9 +19,9 @@ class PostController extends Controller
                 'caption' =>['required', 'string', 'max:255'],
                 'image' => 'required',
             ]);
-                Post::create($formFields);
+                // Post::create($formFields);
             
-            //     auth()->user()->posts()->create($formFields);
+                auth()->user()->posts()->create($formFields);
             return redirect("/profile/1");
     }
 }
