@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -21,9 +22,13 @@ class PostController extends Controller
             ]);
 
             $formFields["image"]=$formFields["image"]->store("posts","public");
-                // Post::create($formFields);
+
+            $image=Image::make(public_path("storage/{$formFields["image"]}"))->fit(1200,1200);                  #resize all incoming images
+            $image->save();
+               
+            // Post::create($formFields);
             
                 auth()->user()->posts()->create($formFields);
-            return redirect("/profile/" . auth()->user()->id);
+                return redirect("/profile/" . auth()->user()->id);
     }
 }
