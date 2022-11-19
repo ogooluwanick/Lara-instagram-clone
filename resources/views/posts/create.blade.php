@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="container ">
-                <form method="POST" action="{{ route('post.store') }}">
+                <form method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data">                          {{--<enctype="multipart/form-data"> is important for file upload--}}
                         @csrf
                         <div class="offset-2">
                                 <h1>
@@ -42,7 +42,7 @@
                                 <div class="col-8 offset-2">
                                         <div class="form-group row">
                                                 <label for="image" class="col-md-4 col-form-label">Image</label>
-                                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image" autofocus>
+                                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image"    >
                 
                                                 @error('image')
                                                         <span class="invalid-feedback" role="alert">

@@ -17,7 +17,7 @@ class PostController extends Controller
 
         $formFields = $request->validate([
                 'caption' =>['required', 'string', 'max:255'],
-                'image' => 'required',
+                'image' => 'required | image',
             ]);
                 // Post::create($formFields);
             
