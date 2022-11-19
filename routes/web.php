@@ -23,8 +23,11 @@ Route::get('/', function () {
 Auth::routes();
 
 
-//Show the form create()
+//Show Post the form create()
 Route::get("/p", [PostController::class,"create"])->middleware("auth");
+
+//Store Post  store()
+Route::post("/p/create", [PostController::class,"store"])->middleware("auth")->name('post.store');
 
 //Show user profile index()
 Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profile.show');
