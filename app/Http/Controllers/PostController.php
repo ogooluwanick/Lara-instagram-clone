@@ -19,9 +19,11 @@ class PostController extends Controller
                 'caption' =>['required', 'string', 'max:255'],
                 'image' => 'required | image',
             ]);
+
+            $formFields["image"]=$formFields["image"]->store("posts","public");
                 // Post::create($formFields);
             
                 auth()->user()->posts()->create($formFields);
-            return redirect("/profile/1");
+            return redirect("/profile/" . auth()->user()->id);
     }
 }
