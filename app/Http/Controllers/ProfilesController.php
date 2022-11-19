@@ -9,7 +9,7 @@ class ProfilesController extends Controller
 {
         public function index(User $user)
         {
-                return view('home',[
+                return view('profiles.index',[
                         "user"=>$user
                 ]);
         }

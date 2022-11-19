@@ -7,3 +7,70 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+}
+
+
+*{
+        font-family: 'Lato', sans-serif;    
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+}
+
+button {
+        all: unset;
+        cursor: pointer;
+}
+
+/* A elements that don't have a class get default styles */
+// a,  a:hover, a:active{
+//         all: unset;
+//         color: #01376b;
+//         fill:  #01376b;
+//         cursor: pointer;
+
+//         &:hover{
+//                 color: lighten(#01376b,60%) ;
+//                 fill: lighten(#01376b,60%) ; ;
+//         }
+// }
+
+.profile_topRow{
+       @media screen and (max-width: 1000px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+        }
+}
+      
+
+.profile_headName{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1{
+                margin: 0;
+        }
+
+        a{
+                font-size: 1.25rem;
+                gap:3px
+        }
+}
+
+.post-btn{
+        display: flex;
+        
+        button{
+                width: 100px;
+                margin: auto;
+        }
+        
+}

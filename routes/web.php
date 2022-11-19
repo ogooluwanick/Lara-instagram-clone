@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfilesController;
 
 /*
@@ -21,4 +22,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+//Show the form create()
+Route::get("/p", [PostController::class,"create"])->middleware("auth");
+
+//Show user profile index()
 Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profile.show');
