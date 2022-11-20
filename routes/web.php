@@ -29,5 +29,8 @@ Route::get("/p", [PostController::class,"create"])->middleware("auth");
 //Store Post  store()
 Route::post("/p/create", [PostController::class,"store"])->middleware("auth")->name('post.store');
 
+//Show Post  show()
+Route::get("/p/{post}", [PostController::class,"show"])->name('post.show');
+
 //Show user profile index()
 Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profile.show');
