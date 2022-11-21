@@ -16,7 +16,7 @@
                                                 <label for="caption" class="col-md-4 col-form-label">Caption</label>
                                                 <input id="caption" type="text" placeholder="Enter caption..." class="form-control @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}" required autocomplete="caption" autofocus>
 
-                                                @error('name')
+                                                @error('caption')
                                                         <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                         </span>

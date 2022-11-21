@@ -13,4 +13,25 @@ class ProfilesController extends Controller
                         "user"=>$user,
                 ]);
         }
+        
+        public function edit(User $user)
+        {
+                return view('profiles.edit',compact("user"));
+        }
+
+        public function update(User $user,Request $request)
+        {
+                // dd($request->url);
+                $formdata=$request->validate([
+                        "title"=>"required",
+                        "desc"=>"required | min:33 | max:1000",
+                        "url"=>"url",
+                        "image"=>"",
+                ]);
+
+                // dd($formdata["url"]);
+                auth()->user()->profile->update($formdata);
+
+                return redirect('/profile/' . $user->id);
+        }
 }

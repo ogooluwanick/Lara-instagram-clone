@@ -34,3 +34,9 @@ Route::get("/p/{post}", [PostController::class,"show"])->name('post.show');
 
 //Show user profile index()
 Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profile.show');
+
+//Edit user profile edit()
+Route::get('/profile/{user}/edit', [ProfilesController::class, 'edit'])->middleware("auth")->name('profile.edit');
+
+//Store Post  store()
+Route::patch("/profile/{user}", [ProfilesController::class,"update"])->middleware("auth")->name('profile.update');
