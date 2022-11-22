@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
@@ -16,7 +17,7 @@ class ProfilesController extends Controller
         
         public function edit(User $user)
         {
-                $this->authorize("update",$user->profile);                                              //Policy auth for User to Profile update
+                $this->authorize('update', $user->profile);                                              //Policy auth for User to Profile update
                 return view('profiles.edit',compact("user"));
         }
 
@@ -30,8 +31,16 @@ class ProfilesController extends Controller
                         "image"=>"",
                 ]);
 
+                
+                if($request->file("image")){
+                        $formdata["image"]=$formdata["image"]->store("profile","public");
+
+                        $image=Image::make(public_path("storage/{$formdata["image"]}"))->fit(1000,1000);                  #resize all incoming images
+                        $image->save();
+                }
+
                 // dd($formdata["url"]);
-                auth()->user()->profile->update($formdata);
+                auth()->user()->profile->update(array_merge($formdata) );
 
                 return redirect('/profile/' . $user->id);
         }

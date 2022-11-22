@@ -6,7 +6,7 @@ use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ProfilePplicy
+class ProfilePolicy
 {
     use HandlesAuthorization;
 
@@ -30,7 +30,7 @@ class ProfilePplicy
      */
     public function view(User $user, Profile $profile)
     {
-       //
+        //
     }
 
     /**
@@ -53,7 +53,7 @@ class ProfilePplicy
      */
     public function update(User $user, Profile $profile)
     {
-        return $user->id == $profile->user_id;                                    //Policy to check if its the user trying to update his own profile
+        return $user->id == $profile->user_id;
     }
 
     /**
@@ -92,3 +92,6 @@ class ProfilePplicy
         //
     }
 }
+
+
+
