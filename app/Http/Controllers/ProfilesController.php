@@ -16,6 +16,7 @@ class ProfilesController extends Controller
         
         public function edit(User $user)
         {
+                $this->authorize("update",$user->profile);                                              //Policy auth for User to Profile update
                 return view('profiles.edit',compact("user"));
         }
 
