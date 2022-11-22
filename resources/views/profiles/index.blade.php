@@ -4,7 +4,7 @@
 <div class="container ">
         <div class="profile_topRow row ">
                 <div class="col-3 d-flex justify-content-center align-items-center">
-                        <img class="rounded-circle "  :width="[200]" :height="[200]" src="https://i.pinimg.com/564x/b0/16/0b/b0160be02faa7261a6ce5b124d381aa1.jpg" alt="user logo">
+                        <img class="rounded-circle "  :width="[200]" :height="[200]" src="{{$user->profile?->image? asset("storage/".$user->profile->image)  :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxog564E02OFQTsvhopueb3uw5vEr2tZv4Dw&usqp=CAU" }}" alt="user logo">
                 </div>
                 <div class="col-9">
                         @can('update', $user->profile)
@@ -30,9 +30,9 @@
                                 <div class="mr-4"><strong class="font-weight-bold">386 </strong>following</div>
                         </div>
                         <div class="">
-                                <strong class="font-weight-bold pt-4">{{$user->profile->title}}</strong>
-                                <div class="">{{$user->profile->desc}}</div>
-                                <a class="profile_URL " href="https://{{$user->profile->url}}" target="_blank">{{$user->profile->url}} </a>
+                                <strong class="font-weight-bold pt-4">{{$user->profile?->title}}</strong>
+                                <div class="">{{$user->profile?->desc}}</div>
+                                <a class="profile_URL " href={{"https://" . $user->profile?->url}} target="_blank">{{$user->profile?->url}} </a>
                         </div>
                 </div>
         </div>

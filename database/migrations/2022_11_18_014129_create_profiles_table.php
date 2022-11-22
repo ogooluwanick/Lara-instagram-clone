@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text("desc")->nullable();
             $table->string("url")->nullable();
             $table->timestamps();
+            $table->string("image")->default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxog564E02OFQTsvhopueb3uw5vEr2tZv4Dw&usqp=CAU");
 
             $table->index("user_id");                                                #index for fk_user table
         });     
