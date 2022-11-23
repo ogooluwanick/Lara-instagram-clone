@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\ProfilesController;
 
 /*
@@ -20,8 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
+
+Auth::routes();
 
 //Show Post the form create()
 Route::get("/p", [PostController::class,"create"])->middleware("auth");
@@ -41,3 +43,6 @@ Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profi
 
 //Store profile  store()
 Route::patch("/profile/{user}", [ProfilesController::class,"update"])->middleware("auth")->name('profile.update');
+
+//Follow User  store()
+Route::post("/follow/{user}", [FollowsController::class,"store"])->name('follow.store');

@@ -8,15 +8,18 @@
                         <img class="rounded-circle "  :width="[200]" :height="[200]" src="{{asset("storage/".$user->profile?->image)}}" alt="user logo">
                 </div>
                 <div class="col-9">
-                        @can('update', $user->profile)
-                                <div class="profile_headName">
-                                        <h1>{{$user["username"]}}</h1>
+                        <div class="profile_headName">
+                                <h1>{{$user["username"]}}</h1>
+                                @can('update', $user->profile)
                                         <a class="d-flex justify-concent-center align-items-center " href="/p">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 18v-10h-2.51l4.51-5.01 4.51 5.01h-2.51v10h-4zm-2 2h8v-10h5l-9-10-9 10h5v10zm11-1v3h-14v-3h-2v5h18v-5h-2z"/></svg>
                                                 Post
                                         </a>
+                                @endcan
+                                @if (auth()->user()->id!==$user->id)
+                                                <follow-button user-id="{{auth()->user()->id}}"></follow-button>
+                                @endif
                                 </div>
-                        @endcan
                         @can('update', $user->profile)
                                 <div class="my-2">
                                         <a class="d-flex justify-concent-center align-items-center " href="/profile/{{$user["id"]}}/edit">
