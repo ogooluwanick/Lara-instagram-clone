@@ -39,7 +39,7 @@ class ProfilesController extends Controller
                         $image->save();
                 }
 
-                // dd($formdata);
+                // dd($formdata["url"]);
                 auth()->user()->profile->update($formdata);
 
                 return redirect('/profile/' . $user->id);

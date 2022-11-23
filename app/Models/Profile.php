@@ -14,8 +14,9 @@ class Profile extends Model
 
         protected $fillable = [
                 'title',
+                "desc",
+                "url",
                 'image',
-               
         ];
 
 

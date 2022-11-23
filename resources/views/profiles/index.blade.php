@@ -4,7 +4,8 @@
 <div class="container ">
         <div class="profile_topRow row ">
                 <div class="col-3 d-flex justify-content-center align-items-center">
-                        <img class="rounded-circle "  :width="[200]" :height="[200]" src="{{$user->profile?->image? asset("storage/".$user->profile->image)  :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxog564E02OFQTsvhopueb3uw5vEr2tZv4Dw&usqp=CAU" }}" alt="user logo">
+                       {{-- <img src=" {{$user->profile->image}}" alt=""> --}}
+                        <img class="rounded-circle "  :width="[200]" :height="[200]" src="{{asset("storage/".$user->profile?->image)}}" alt="user logo">
                 </div>
                 <div class="col-9">
                         @can('update', $user->profile)
