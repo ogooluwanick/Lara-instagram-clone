@@ -19,11 +19,11 @@
                 console.log(this.userId)
             },
     
-            data: function () {
-                return {
-                    status: this.follows,
-                }
-            },
+        //     data: function () {
+        //         return {
+        //             status: this.follows,
+        //         }
+        //     },
     
             methods: {
                 followUser() {
