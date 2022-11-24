@@ -10,13 +10,18 @@ class ProfilesController extends Controller
 {
         public function index(User $user)
         {
+
+                $follows=(auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+
                 return view('profiles.index',[
                         "user"=>$user,
+                        "follows"=>$follows
                 ]);
         }
         
         public function edit(User $user)
         {
+                // dd($user);
                 $this->authorize('update', $user->profile);                                              //Policy auth for User to Profile update
                 return view('profiles.edit',compact("user"));
         }

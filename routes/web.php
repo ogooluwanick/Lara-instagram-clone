@@ -45,4 +45,4 @@ Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profi
 Route::patch("/profile/{user}", [ProfilesController::class,"update"])->middleware("auth")->name('profile.update');
 
 //Follow User  store()
-Route::post("/follow/{user}", [FollowsController::class,"store"])->name('follow.store');
+Route::post("/follow/{user?}", [FollowsController::class,"store"])->middleware("auth")->name('follow.store');

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-                 <a href="#" class="font-weight-bold ml-5 " @click="followUser"  style="color:#0095f6;">Follow</a>
+                 <a href="#" class="font-weight-bold ml-5 " @click="followUser" v-text="buttonText"  style="color:#0095f6;"></a>
     </div>
 </template>
 
@@ -19,11 +19,11 @@
                 console.log(this.userId)
             },
     
-        //     data: function () {
-        //         return {
-        //             status: this.follows,
-        //         }
-        //     },
+            data: function () {
+                return {
+                    status: this.follows,
+                }
+            },
     
             methods: {
                 followUser() {
@@ -41,10 +41,10 @@
                 }
             },
     
-        //     computed: {
-        //         buttonText() {
-        //             return (this.status) ? 'Unfollow' : 'Follow';
-        //         }
-        //     }
+            computed: {
+                buttonText() {
+                    return (this.status) ? 'Unfollow' : 'Follow';
+                }
+            }
         }
     </script>
