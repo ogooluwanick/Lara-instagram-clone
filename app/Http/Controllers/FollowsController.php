@@ -8,6 +8,11 @@ use App\Models\User;
 class FollowsController extends Controller
 {
         public function store(User $user){
-                dd($user);
+                // dd($user);
+
+                // return $user->username;
+
+                return auth()->user()->following()->toggle($user->profile);
+
         }
 }

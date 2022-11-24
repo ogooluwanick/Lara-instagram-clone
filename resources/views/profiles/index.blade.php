@@ -17,7 +17,7 @@
                                         </a>
                                 @endcan
                                 @if (auth()->user()->id!==$user->id)
-                                                <follow-button user-id="{{auth()->user()->id}}"></follow-button>
+                                                <follow-button user-id="{{auth()->user()->id}}" follows="{{$follows}}"></follow-button>
                                 @endif
                                 </div>
                         @can('update', $user->profile)
